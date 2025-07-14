@@ -33,3 +33,11 @@ steps:
     targetPath: '$(Pipeline.Workspace)'
     artifact: 'myartifact'
     publishLocation: 'pipeline'
+
+- task: AzureWebApp@1
+  inputs:
+    azureSubscription: 'WebAppDeploy-sc'
+    appType: 'webApp'
+    appName: 'azumaWebApp5472'
+    package: '$(System.DefaultWorkingDirectory)/**/*.zip'
+    deploymentMethod: 'auto'
