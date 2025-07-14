@@ -32,7 +32,8 @@ steps:
   inputs:
     targetPath: '$(Pipeline.Workspace)'
     artifact: 'myartifact'
-    publishLocation: 'pipeline'
+    publishLocation: 'filepath'
+    fileSharePath: '$(System.DefaultWorkingDirectory)/**/*.zip'
 
 - task: AzureWebApp@1
   inputs:
